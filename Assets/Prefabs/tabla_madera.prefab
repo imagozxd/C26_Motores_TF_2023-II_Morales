@@ -78,6 +78,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: tabla_madera
       objectReference: {fileID: 0}
+    - target: {fileID: 3387107001045495753, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387107001045495753, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387107001045495753, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387107001045495753, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387107001045495753, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86,6 +111,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1325443154843775837}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3461925600520371139}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a88ba3e48e82d9d41b68e51122c564f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5686315514549989114}
   m_SourcePrefab: {fileID: 100100000, guid: a88ba3e48e82d9d41b68e51122c564f6, type: 3}
 --- !u!1 &7529651093611718220 stripped
 GameObject:
@@ -112,5 +145,47 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.61, y: 0.29, z: 0.21}
+  m_Size: {x: 0.61, y: 0.29, z: 0.14}
   m_Center: {x: 0, y: 0, z: 0.05}
+--- !u!54 &3461925600520371139
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529651093611718220}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-5686315514549989114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529651093611718220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7de972d32027aa40ae78fc33c231889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceHeight: 6
+  rotationSpeed: 40
+  gravity: 9.8
