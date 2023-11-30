@@ -7,13 +7,22 @@ public class NotEdible : Resources
 {
     // detalles de cosas NO COMESTIBLES
     public string requiredTool; // Herramienta necesaria para recolectar el recurso
-    public GameObject treePrefab; // spawn de arboles 
+    public GameObject treePrefab; // spawn de arboles
+    public GameObject choppedTreePrefab; // prefab de arbol talado
+    public int hpTree;
+    public int currentHpTree; // deberia ser privado
 
     public Vector3 treeSpawn = new Vector3 (0, 0, 0);  //declara el punto central de la zona spawn 
     public float radiusSpawn = 0;
 
     // una lista para almacenar la cantidad de ref de arboles instanciados
     private List<GameObject> spawnedTrees = new List<GameObject>();
+
+    private void Start()
+    {
+        //establecer la vida maxima de los arboles
+        currentHpTree = hpTree;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -66,15 +75,20 @@ public class NotEdible : Resources
     public override void Interact()
     {
         base.Interact();
-        // Lógica específica de recursos no comestibles
-        Debug.Log(resourceName + " requires a " + requiredTool + " to gather.");
-        // Aquí podrías agregar lógica para recolectar el recurso no comestible
-        
+                
         Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
     }
 
     public int GetspawnedTreeCount()
     {
         return spawnedTrees.Count; 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController playerDamage = GetComponent<PlayerController>();
+            Debug.Log("esto es playerDamage:"+ playerDamage); 
+        }
     }
 }

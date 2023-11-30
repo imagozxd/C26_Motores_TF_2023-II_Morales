@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 velocity; // Vector de velocidad privado
 
+    public int damage;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
