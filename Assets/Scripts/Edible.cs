@@ -8,15 +8,75 @@ public class Edible : Resources
     public int healthRestoreAmount;
     public GameObject pecesitoPrefab;
 
+    public Vector3 fishSpawn = new Vector3(0, 0, 0);  //declara el punto central de la zona spawn 
+
+    public float lengthSpawn = 0;  // Ancho de la zona rectangular
+    public float widthSpawn = 0;   // Largo de la zona rectangular
+    //public float radiusSpawn = 0; // cambiar esto para un rectangulo zz
+
+    private List<GameObject> spawnedFishes = new List<GameObject>();
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 randomPosition = GetRandomPosition();
+            if (!HasCollision(randomPosition))
+            {
+                GameObject newTree = Instantiate(pecesitoPrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
+                spawnedFishes.Add(newTree); // se agrega a la lista
+                Debug.Log("pos del arbol spameado: " + randomPosition);
+
+            }
+            Debug.Log("cantidad de " + resourceName + " :" + GetspawnedFishesCount());
+        }
+    }
+
+
+    Vector3 GetRandomPosition()
+    {
+        float randomX = Random.Range(-lengthSpawn / 2, lengthSpawn / 2) + fishSpawn.x;
+        float randomZ = Random.Range(-widthSpawn / 2, widthSpawn / 2) + fishSpawn.z;
+
+        return new Vector3(randomX, 0f, randomZ);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+
+        Vector3 center = transform.position + fishSpawn;
+        Vector3 size = new Vector3(lengthSpawn, 0f, widthSpawn);
+
+        Gizmos.DrawWireCube(center, size);
+    }
+
+    bool HasCollision(Vector3 position)
+    {
+        Ray ray = new Ray(position + Vector3.up * 20f, Vector3.down);
+        RaycastHit hit;
+
+        Debug.DrawRay(ray.origin, ray.direction * 20f, Color.yellow);
+
+        if (!Physics.Raycast(ray, out hit, Mathf.Infinity) || hit.collider.CompareTag("top_fish"))
+        {
+            // No hay colisión o la colisión es con un objeto que tiene el tag correcto, entonces podemos instanciar el árbol
+            Debug.Log("toca un pescado");
+            return true;
+        }
+        Debug.Log("no hay pescado, crea uno");
+        return false;
+
+    }
+    public int GetspawnedFishesCount()
+    {
+        return spawnedFishes.Count;
+    }
+
+
     // Método para interactuar con el recurso comestible
     public override void Interact()
     {
         base.Interact();
-        // Lógica específica de recursos comestibles
-        Debug.Log("Eating " + resourceName + " restores " + healthRestoreAmount + " health.");
-        // Aquí podrías agregar lógica para afectar la salud del jugador
-
-        Instantiate(pecesitoPrefab, position, Quaternion.identity);
-        Debug.Log("creame un pecesito!");
+        
     }
 }

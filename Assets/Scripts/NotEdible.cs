@@ -26,7 +26,7 @@ public class NotEdible : Resources
                 Debug.Log("pos del arbol spameado: " + randomPosition);                                                                      
 
             }
-            Debug.Log(GetspawnedTreeCount());
+            Debug.Log("cantidad de "+ resourceName+ " :"+ GetspawnedTreeCount());
         }
     }
 
