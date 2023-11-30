@@ -7,6 +7,7 @@ TagManager:
   - terrain_tag
   - top_tree
   - NodeShark
+  - top_fish
   layers:
   - Default
   - TransparentFX

@@ -5,14 +5,13 @@ using UnityEngine.InputSystem.LowLevel;
 
 public class ShipConstruction : MonoBehaviour
 {
-    public int valorMadera = 1;  // Valor de la madera
-    public Transform deck;    // Transform del lugar donde se colocan las maderas en el barco
+    public int valorMadera = 1;  // valor de la madera
+    public Transform deck;    // punto para hacer la collision y "entregar" las maderas
 
-    private Stack<int> maderas = new Stack<int>();  // Pila para almacenar los valores de madera
+    private Stack<int> maderas = new Stack<int>();  // pila que no se bien si deberia ser pila xd
 
     public GameObject[] shipStructureLevel;
-
-    // Método para agregar un valor de madera a la pila y modificar la estructura del barco
+    
     public void AddMadera(int valorMadera)
     {
         maderas.Push(valorMadera);
@@ -20,30 +19,29 @@ public class ShipConstruction : MonoBehaviour
         Debug.Log("Cantidad de madera en la pila: " + maderas.Count);
     }
 
-    // Método para quitar un valor de madera de la pila y modificar la estructura del barco
-    public void RemoveMadera()
+    public void RemoveMadera() //asocial a evento cuando acabe la noche o empiece un nuevo dia , quitar maderas
     {
         if (maderas.Count > 0)
         {
-            // Saca el valor de madera de la pila
+            // pop para sacar las de arriba
             int maderaRemovida = maderas.Pop();
 
-            // Llama a un método para modificar la estructura del barco
+            // actualizar estructura
             ModificarEstructuraBarco();
 
-            // Debug para imprimir la cantidad de madera en la pila después de remover
+            // print cantidad de maderas
             Debug.Log("Cantidad de madera en la pila después de remover: " + maderas.Count);
         }
         else
         {
+            // print
             Debug.LogWarning("No hay madera para remover.");
         }
     }
 
-    // Método para modificar la estructura del barco según la cantidad de maderas
     private void ModificarEstructuraBarco()
     {
-        // Determina el nivel de estructura a activar según el valor de valorMadera
+        // actualizar el nivel de la estrutura del barco
         if (maderas.Count >= 0 && maderas.Count <= 10)
         {
             shipStructureLevel[0].SetActive(true);
@@ -65,7 +63,7 @@ public class ShipConstruction : MonoBehaviour
     }
     private void Start()
     {
-        // Desactiva todos los niveles de estructura
+        // apagar todos los modelos al inicir 
         for (int i = 0; i < shipStructureLevel.Length; i++)
         {
             shipStructureLevel[i].SetActive(false);
@@ -74,8 +72,7 @@ public class ShipConstruction : MonoBehaviour
     }
     private void Update()
     {
-        // Puedes cambiar el valor 1 por cualquier valor que desees agregar en cada frame
-        // Puedes usar Input.GetKey, Input.GetKeyDown o cualquier otro método para detectar cuándo agregar madera
+        //  probando desde el inspector con una maderita zz 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Agrega un valor arbitrario cada vez que se presiona la tecla espaciadora

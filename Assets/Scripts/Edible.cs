@@ -10,8 +10,8 @@ public class Edible : Resources
 
     public Vector3 fishSpawn = new Vector3(0, 0, 0);  //declara el punto central de la zona spawn 
 
-    public float lengthSpawn = 0;  // Ancho de la zona rectangular
-    public float widthSpawn = 0;   // Largo de la zona rectangular
+    public float lengthSpawn = 0;  // Ancho 
+    public float widthSpawn = 0;   // Largo 
     //public float radiusSpawn = 0; // cambiar esto para un rectangulo zz
 
     private List<GameObject> spawnedFishes = new List<GameObject>();
@@ -59,7 +59,7 @@ public class Edible : Resources
 
         if (!Physics.Raycast(ray, out hit, Mathf.Infinity) || hit.collider.CompareTag("top_fish"))
         {
-            // No hay colisión o la colisión es con un objeto que tiene el tag correcto, entonces podemos instanciar el árbol
+            // si no hay colision con el tag, si instancia papu
             Debug.Log("toca un pescado");
             return true;
         }
@@ -72,8 +72,6 @@ public class Edible : Resources
         return spawnedFishes.Count;
     }
 
-
-    // Método para interactuar con el recurso comestible
     public override void Interact()
     {
         base.Interact();
