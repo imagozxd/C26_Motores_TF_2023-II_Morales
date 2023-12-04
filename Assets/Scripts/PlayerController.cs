@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Animator: " + animator);
         if (animator != null)
         {
-            // Resto del código
+            Debug.Log("no hay animator ingresado");
         }
     }
 

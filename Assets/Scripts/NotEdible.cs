@@ -18,25 +18,41 @@ public class NotEdible : Resources
     // una lista para almacenar la cantidad de ref de arboles instanciados
     private List<GameObject> spawnedTrees = new List<GameObject>();
 
+    public int initialTreeCount; // cantidad inicial, PROBAR    
+
     private void Start()
     {
         //establecer la vida maxima de los arboles
         currentHpTree = hpTree;
+
+        SpawnInitialTrees();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //
+        //
+        //
+    }
+    
+    void SpawnInitialTrees()
+    {
+        for (int i = 0; i < initialTreeCount; i++)
         {
-            Vector3 randomPosition = GetRandomPosition();
-            if (!HasCollision(randomPosition))
-            {
-                 GameObject newTree =  Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90,90))); // euler porque sino sale acostado
-                spawnedTrees.Add(newTree); // se agrega a la lista
-                Debug.Log("pos del arbol spameado: " + randomPosition);                                                                      
-
-            }
-            Debug.Log("cantidad de "+ resourceName+ " :"+ GetspawnedTreeCount());
+            SpawnTree();
         }
+    }
+    void SpawnTree()
+    {
+        Vector3 randomPosition = GetRandomPosition();
+        if (!HasCollision(randomPosition))
+        {
+            GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
+            spawnedTrees.Add(newTree); // se agrega a la lista
+            Debug.Log("pos del arbol spameado: " + randomPosition);
+
+        }
+        Debug.Log("cantidad de " + resourceName + " :" + GetspawnedTreeCount());
+
     }
 
     Vector3 GetRandomPosition()
