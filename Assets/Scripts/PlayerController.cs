@@ -6,18 +6,19 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     private Rigidbody rb;
     private Vector3 velocity; // Vector de velocidad privado
-    private Animator animator;
+    public Animator animator;
 
     public int damage;
+
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.velocity = velocity;
-
         // Verificamos si animator no es null antes de intentar acceder a él
         if (animator != null)
         {
@@ -39,14 +40,31 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("no hay animator ingresado");
         }
+
+
+        rb.velocity = velocity;
+    }
+    private void FixedUpdate()
+    {
+        //rb.velocity = velocity;
+
+       
     }
 
-
+    public void OnPressD(InputAction.CallbackContext context)
+    {
+        
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 movementInput = context.ReadValue<Vector2>();
         velocity = new Vector3(movementInput.x * speed,0f, movementInput.y * speed);
-        Debug.Log("Movimiento detectado: " + velocity);
+        Debug.Log("Movimiento detectado: " + velocity +"ZZ" + gameObject.name);
+
+        if (movementInput.x > 0)
+        {
+            //  gameObject.transform.Rotate(new Vector3(0, 500, 0) * Time.deltaTime);
+        }
     }
     public void OnPressJ(InputAction.CallbackContext context)
     {

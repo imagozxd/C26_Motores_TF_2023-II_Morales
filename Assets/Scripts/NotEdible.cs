@@ -48,10 +48,10 @@ public class NotEdible : Resources
         {
             GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
             spawnedTrees.Add(newTree); // se agrega a la lista
-            Debug.Log("pos del arbol spameado: " + randomPosition);
+            //Debug.Log("pos del arbol spameado: " + randomPosition);
 
         }
-        Debug.Log("cantidad de " + resourceName + " :" + GetspawnedTreeCount());
+        //Debug.Log("cantidad de " + resourceName + " :" + GetspawnedTreeCount());
 
     }
 
