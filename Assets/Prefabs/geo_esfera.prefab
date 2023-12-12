@@ -86,5 +86,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 057cf758860808e45a6cd959642ed385,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6987976347888547542}
   m_SourcePrefab: {fileID: 100100000, guid: 057cf758860808e45a6cd959642ed385, type: 3}
+--- !u!1 &4352859511443470348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 057cf758860808e45a6cd959642ed385,
+    type: 3}
+  m_PrefabInstance: {fileID: 3506368385892582749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6987976347888547542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352859511443470348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8106c4468fe3d1469cf5f70895b3455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadRotacion: 45

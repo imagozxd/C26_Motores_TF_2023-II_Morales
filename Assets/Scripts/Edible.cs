@@ -23,9 +23,11 @@ public class Edible : Resources
             Vector3 randomPosition = GetRandomPosition();
             if (!HasCollision(randomPosition))
             {
-                GameObject newTree = Instantiate(pecesitoPrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
-                spawnedFishes.Add(newTree); // se agrega a la lista
+                GameObject newEdible = Instantiate(pecesitoPrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
+                spawnedFishes.Add(newEdible); // se agrega a la lista
                 Debug.Log("pos del arbol spameado: " + randomPosition);
+
+                newEdible.transform.SetParent(this.transform);
 
             }
             Debug.Log("cantidad de " + resourceName + " :" + GetspawnedFishesCount());

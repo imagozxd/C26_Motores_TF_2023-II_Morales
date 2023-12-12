@@ -40,6 +40,17 @@ public class Pescado : MonoBehaviour
             //rb.isKinematic = false;
             Debug.Log("Se detiene el salto");
         }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Inventario inventario = collision.gameObject.GetComponent<Inventario>();
+            inventario.cantidadMadera++;
+            Debug.Log("entra en colision madera <> player // +madera a inventario");
+
+
+            Destroy(this.gameObject);  // destruye la madera
+
+        }
     }
 }
 

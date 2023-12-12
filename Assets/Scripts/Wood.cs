@@ -46,6 +46,9 @@ public class Wood : MonoBehaviour
             Inventario inventario = collision.gameObject.GetComponent<Inventario>();
             inventario.cantidadMadera++;
             Debug.Log("entra en colision madera <> player // +madera a inventario");
+            
+            
+            Destroy(this.gameObject);  // destruye la madera
 
         }
         

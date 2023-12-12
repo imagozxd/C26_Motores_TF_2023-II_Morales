@@ -17,6 +17,26 @@ public class CanvasController : MonoBehaviour
 
     private void Update()
     {
-        contadorMadera.text = "x"+inventario.cantidadMadera.ToString();
+        contadorMadera.text = "x "+inventario.cantidadMadera.ToString();
+
+        if (inventario.cantidadMadera < 0)
+        {
+            inventario.cantidadMadera = 0;
+        }
+        else if (inventario.cantidadMadera > 20)
+        {
+            inventario.cantidadMadera = 20;
+        }
+
+        if (inventario.cantidadMadera >= 20)
+        {
+            contadorMadera.color = Color.red;
+
+            // Puedes agregar aquí lógica adicional si es necesario
+        }
+        else
+        {
+            contadorMadera.color = Color.white;
+        }
     }
 }

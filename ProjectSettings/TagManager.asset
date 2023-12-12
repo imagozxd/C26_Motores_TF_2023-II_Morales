@@ -8,11 +8,13 @@ TagManager:
   - top_tree
   - NodeShark
   - top_fish
+  - arma
+  - arbol
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - suelo
   - Water
   - UI
   - 

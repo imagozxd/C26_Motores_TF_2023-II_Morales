@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class NotEdible : Resources
 {
     // detalles de cosas NO COMESTIBLES
-    public string requiredTool; // Herramienta necesaria para recolectar el recurso
+    //public string requiredTool; // Herramienta necesaria para recolectar el recurso
     public GameObject treePrefab; // spawn de arboles
     public GameObject choppedTreePrefab; // prefab de arbol talado
     public int hpTree;
@@ -49,6 +49,8 @@ public class NotEdible : Resources
             GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
             spawnedTrees.Add(newTree); // se agrega a la lista
             //Debug.Log("pos del arbol spameado: " + randomPosition);
+
+            newTree.transform.SetParent(this.transform); // para hacerlos hijos
 
         }
         //Debug.Log("cantidad de " + resourceName + " :" + GetspawnedTreeCount());
