@@ -9,8 +9,8 @@ public class NotEdible : Resources
     //public string requiredTool; // Herramienta necesaria para recolectar el recurso
     public GameObject treePrefab; // spawn de arboles
     public GameObject choppedTreePrefab; // prefab de arbol talado
-    public int hpTree;
-    public int currentHpTree; // deberia ser privado
+    //public int hpTree;
+    //public int currentHpTree; // deberia ser privado                     YA NO DEBERIAN ESTAR ACA, NOS VAMOS A UN SCRIPT SOLITO 
 
     public Vector3 treeSpawn = new Vector3 (0, 0, 0);  //declara el punto central de la zona spawn 
     public float radiusSpawn = 0;
@@ -23,7 +23,7 @@ public class NotEdible : Resources
     private void Start()
     {
         //establecer la vida maxima de los arboles
-        currentHpTree = hpTree;
+        //currentHpTree = hpTree;
 
         SpawnInitialTrees();
     }
@@ -106,7 +106,8 @@ public class NotEdible : Resources
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController playerDamage = GetComponent<PlayerController>();
-            Debug.Log("esto es playerDamage:"+ playerDamage); 
+            Debug.Log("esto es playerDamage:"+ playerDamage);
+            Debug.Log("colision desde arbol hacia player");
         }
     }
 }

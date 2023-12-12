@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
     {
         float directionMovement = context.ReadValue<float>() * velocidad;
         velocity = new Vector3(0, 0, directionMovement);
-        Debug.Log("valor :" + context.ReadValue<float>());
+        //Debug.Log("valor :" + context.ReadValue<float>());
     }
 
     public void Direction(InputAction.CallbackContext context)
     {
         float directionRotate = context.ReadValue<float>();
-        Debug.Log("valor directionRotate :" + context.ReadValue<float>());
+        //Debug.Log("valor directionRotate :" + context.ReadValue<float>());
 
         // Calcula la cantidad de rotación en el eje Y
         rotacionY = directionRotate * velocidadRotacion;
