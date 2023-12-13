@@ -17028,7 +17028,7 @@ Transform:
   m_GameObject: {fileID: 419032375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.8, y: 0.9, z: 88.3}
+  m_LocalPosition: {x: 92.5, y: 0.9, z: 88.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23801,8 +23801,6 @@ MonoBehaviour:
   treePrefab: {fileID: 3085839833021923831, guid: 73ab00aecd03720439c45ee3226685b1,
     type: 3}
   choppedTreePrefab: {fileID: 0}
-  hpTree: 40
-  currentHpTree: 40
   treeSpawn: {x: -89.7, y: 0, z: -76.3}
   radiusSpawn: 37.3
   initialTreeCount: 18
@@ -25361,7 +25359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8ee8afb8d37ed45965ac34af14a447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
+  velocidad: 12
   velocidadRotacion: 180
   damage: 0
   vidaMaxima: 100
@@ -53068,8 +53066,8 @@ Transform:
   m_GameObject: {fileID: 1689570750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.85, z: 5.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 75.5, y: 5.85, z: -151.8}
+  m_LocalScale: {x: 0.67, y: 0.1, z: 0.37}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 619503470}
@@ -53108,6 +53106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cantidadDanio: 10
+  danioReal: 0
+  arbol: {fileID: 0}
 --- !u!1 &1693289364
 GameObject:
   m_ObjectHideFlags: 0
@@ -54163,8 +54163,6 @@ MonoBehaviour:
   treePrefab: {fileID: 3471982552694246392, guid: ab2a5e79b996c7049bebea025c26d230,
     type: 3}
   choppedTreePrefab: {fileID: 0}
-  hpTree: 20
-  currentHpTree: 20
   treeSpawn: {x: 4.6, y: 0, z: 15.99}
   radiusSpawn: 63.8
   initialTreeCount: 23
@@ -55009,11 +55007,9 @@ MonoBehaviour:
   treePrefab: {fileID: 7236537196418665101, guid: 9d2da9b3fafcf6545b2ddbe1504ed0dd,
     type: 3}
   choppedTreePrefab: {fileID: 0}
-  hpTree: 0
-  currentHpTree: 0
   treeSpawn: {x: -35.5, y: 0, z: 40.5}
   radiusSpawn: 43.8
-  initialTreeCount: 12
+  initialTreeCount: 0
 --- !u!4 &1794172496
 Transform:
   m_ObjectHideFlags: 0
@@ -63604,11 +63600,9 @@ MonoBehaviour:
   treePrefab: {fileID: 7236537196418665101, guid: 9d2da9b3fafcf6545b2ddbe1504ed0dd,
     type: 3}
   choppedTreePrefab: {fileID: 0}
-  hpTree: 0
-  currentHpTree: 0
   treeSpawn: {x: 35.6, y: 0, z: -59.2}
   radiusSpawn: 28.6
-  initialTreeCount: 9
+  initialTreeCount: 0
 --- !u!4 &1981366338
 Transform:
   m_ObjectHideFlags: 0
