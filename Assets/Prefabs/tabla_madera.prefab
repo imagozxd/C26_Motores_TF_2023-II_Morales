@@ -186,6 +186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7de972d32027aa40ae78fc33c231889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceHeight: 6
+  forceHeight: 8
   rotationSpeed: 40
   gravity: 9.8

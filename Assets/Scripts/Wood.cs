@@ -16,7 +16,9 @@ public class Wood : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.up * forceHeight;
+        Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), 0.5f, Random.Range(-1f, 1f)).normalized;
+        // Aplicar la fuerza hacia arriba con la dirección aleatoria
+        rb.velocity = randomDirection * forceHeight;
     }
     private void Update()
     {

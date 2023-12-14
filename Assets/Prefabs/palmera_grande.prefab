@@ -177,6 +177,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaArbol: 50
   vidaActualArbol: 0
+  prefabArbolTalada: {fileID: 4605927924514363877, guid: 0cf5035205cf6cf418f75d97f499b7ea,
+    type: 3}
+  tablasMadera: {fileID: 7529651093611718220, guid: 85c706b310c5e1241b4c7b6be1754aea,
+    type: 3}
+  cantidadTablasMadera: 0
 --- !u!65 &5465605506103750339
 BoxCollider:
   m_ObjectHideFlags: 0

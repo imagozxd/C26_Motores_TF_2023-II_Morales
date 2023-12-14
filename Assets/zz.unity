@@ -3573,6 +3573,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5686315514549989114, guid: 85c706b310c5e1241b4c7b6be1754aea,
+        type: 3}
+      propertyPath: alturaFlotante
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1325443154843775837, guid: 85c706b310c5e1241b4c7b6be1754aea,
         type: 3}
       propertyPath: m_IsTrigger
@@ -16145,10 +16150,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27d01c6aa3df4ca43b87c0034976ba7f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1689570751}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27d01c6aa3df4ca43b87c0034976ba7f,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1384617523}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27d01c6aa3df4ca43b87c0034976ba7f,
@@ -25432,7 +25433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9265591d3c64a67439dee952cda435a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadMadera: 20
+  cantidadMadera: 0
 --- !u!1001 &619615614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41323,67 +41324,72 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4659996
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.786
+      value: 5.78
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5680008
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.85654837
+      value: 0.92855555
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.049812973
+      value: -0.06951864
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.36134073
+      value: 0.23738392
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.3650705
+      value: 0.2767682
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 200.436
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -141.554
+      value: 24.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -141.024
+      value: 29.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5fc7d225e051438468eae3d827e10791,
         type: 3}
@@ -41392,7 +41398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5fc7d225e051438468eae3d827e10791,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1689570751}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fc7d225e051438468eae3d827e10791, type: 3}
 --- !u!1 &1308229394
@@ -53066,11 +53076,11 @@ Transform:
   m_GameObject: {fileID: 1689570750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.5, y: 5.85, z: -151.8}
-  m_LocalScale: {x: 0.67, y: 0.1, z: 0.37}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.055, y: -0.01, z: 0.417}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 619503470}
+  m_Father: {fileID: 1384617523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1689570752
 BoxCollider:
@@ -53091,8 +53101,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 5.66, z: 2}
-  m_Center: {x: 0, y: -2.84, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1689570753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54162,7 +54172,8 @@ MonoBehaviour:
   valueItem: 0
   treePrefab: {fileID: 3471982552694246392, guid: ab2a5e79b996c7049bebea025c26d230,
     type: 3}
-  choppedTreePrefab: {fileID: 0}
+  choppedTreePrefab: {fileID: 7529651093611718220, guid: 85c706b310c5e1241b4c7b6be1754aea,
+    type: 3}
   treeSpawn: {x: 4.6, y: 0, z: 15.99}
   radiusSpawn: 63.8
   initialTreeCount: 23
