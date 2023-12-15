@@ -88,17 +88,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "08b633b7-dcab-424f-adb7-8e0f964973a7",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Talar",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "1D Axis",
                     "id": "a3739b16-f676-440e-b4c5-10198624092c",
                     "path": "1DAxis",
@@ -130,6 +119,17 @@
                     "action": "Direction",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e22f69ae-e8f9-4dc6-8ebe-8088a6dd4e1d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Talar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
 
     }
     
-    public void OnPressJ(InputAction.CallbackContext context)
+    public void OnClic(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Debug.Log("Tecla presionada es J ");
+            Debug.Log("Tecla el boton del mouse ");
             // aqui la logica para lanzar la animacion
         }
     }
