@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     public int vidaMaxima = 100;
     public int vidaActual;
 
+    //detectar el barco
+    private bool dentroDelBarco = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -104,6 +107,24 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Vida actual: " + vidaActual);
 
         // Puedes agregar aquí lógica adicional, como comprobar si el jugador ha alcanzado la vida máxima, etc.
+    }
+    public bool EstaDentroDelBarco()
+    {
+        return dentroDelBarco;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("barco"))
+        {
+            dentroDelBarco = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("barco"))
+        {
+            dentroDelBarco = false; 
+        }
     }
 }
 

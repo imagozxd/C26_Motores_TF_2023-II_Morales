@@ -73,11 +73,11 @@ public class ShipConstruction : MonoBehaviour
     private void Update()
     {
         //  probando desde el inspector con una maderita zz 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Agrega un valor arbitrario cada vez que se presiona la tecla espaciadora
-            AddMadera(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    // Agrega un valor arbitrario cada vez que se presiona la tecla espaciadora
+        //    AddMadera(1);
+        //}
     }
 }
 

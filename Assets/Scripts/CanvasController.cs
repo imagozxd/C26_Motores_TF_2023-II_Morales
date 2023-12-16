@@ -7,16 +7,28 @@ public class CanvasController : MonoBehaviour
 {
     public Text contadorMadera;
     public GameObject jugador;
-    Inventario inventario; 
+    Inventario inventario;
+    ShipConstruction shipConstruction;
+    PlayerController playerController;
+
+    public Button _buttonEntregar;
 
     private void Start()
     {
         inventario = jugador.GetComponent<Inventario>();
-        
+        shipConstruction = GetComponent<ShipConstruction>();
+        playerController= jugador.GetComponent<PlayerController>();
+
+        _buttonEntregar.onClick.AddListener(() => BotonEntregar());
+
+        //mostrar el boton en pantalla
+        _buttonEntregar.gameObject.SetActive(false);
+
     }
 
     private void Update()
     {
+        /////////////todo esto modifica solo el texto score de cantidad de maderas 
         contadorMadera.text = "x "+inventario.cantidadMadera.ToString();
 
         if (inventario.cantidadMadera < 0)
@@ -38,5 +50,33 @@ public class CanvasController : MonoBehaviour
         {
             contadorMadera.color = Color.white;
         }
+        ///////////////////////////////
+
+        //verificar si esta dentro dle barco
+        if (playerController.EstaDentroDelBarco())
+        {
+            _buttonEntregar.gameObject.SetActive(true);
+        }
+        else
+        {
+            _buttonEntregar.gameObject.SetActive(false);
+        }
     }
+
+    
+    void BotonEntregar()
+    {
+        //if (jugador != null && jugador.TryGetComponent<ShipConstruction>(out shipConstruction))
+        //{
+        //    Debug.Log("DESDE EL BOTON  " + inventario.cantidadMadera);
+        //    shipConstruction.AddMadera(inventario.cantidadMadera);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning("No se encontró el componente ShipConstruction en el jugador.");
+        //}
+        Debug.Log("DESDE EL BOTON  " + inventario.cantidadMadera);
+        shipConstruction.AddMadera(inventario.cantidadMadera);
+    }
+
 }
