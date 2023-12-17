@@ -5,17 +5,24 @@ using UnityEngine.InputSystem.LowLevel;
 
 public class ShipConstruction : MonoBehaviour
 {
-    public int valorMadera = 1;  // valor de la madera
+    //public int valorMadera = 1;  // valor de la madera
+    public GameObject prefabMadera;
+
     public Transform deck;    // punto para hacer la collision y "entregar" las maderas
 
-    private Stack<int> maderas = new Stack<int>();  // pila que no se bien si deberia ser pila xd
+    private Stack<GameObject> maderas = new Stack<GameObject>();  // pila que no se bien si deberia ser pila xd
 
     public GameObject[] shipStructureLevel;
     
     public void AddMadera(int valorMadera)
     {
-        maderas.Push(valorMadera);
-        ModificarEstructuraBarco();
+        for (int i = 0; i < valorMadera; i++)
+        {
+            maderas.Push(prefabMadera);
+            
+        }
+        
+        
         Debug.Log("Cantidad de madera en la pila: " + maderas.Count);
     }
 
@@ -24,7 +31,7 @@ public class ShipConstruction : MonoBehaviour
         if (maderas.Count > 0)
         {
             // pop para sacar las de arriba
-            int maderaRemovida = maderas.Pop();
+            GameObject maderaRemovida = maderas.Pop();
 
             // actualizar estructura
             ModificarEstructuraBarco();
@@ -39,27 +46,33 @@ public class ShipConstruction : MonoBehaviour
         }
     }
 
-    private void ModificarEstructuraBarco()
+    public void ModificarEstructuraBarco()
     {
-        // actualizar el nivel de la estrutura del barco
-        if (maderas.Count >= 0 && maderas.Count <= 10)
+        if(shipStructureLevel != null )
         {
-            shipStructureLevel[0].SetActive(true);
-            shipStructureLevel[1].SetActive(false);
-            shipStructureLevel[2].SetActive(false);
+            // actualizar el nivel de la estrutura del barco
+            if (maderas.Count >= 0 && maderas.Count < 10)
+            {
+                Debug.Log("SSSSSSSSSSSSSSSSSSSSSSSS" + maderas.Count);
+                Debug.Log("YYYYYY" + shipStructureLevel[0].name);
+                shipStructureLevel[0].SetActive(true);
+                shipStructureLevel[1].SetActive(false);
+                shipStructureLevel[2].SetActive(false);
+            }
+            else if (maderas.Count >= 11 && maderas.Count < 24)
+            {
+                shipStructureLevel[0].SetActive(false);
+                shipStructureLevel[1].SetActive(true);
+                shipStructureLevel[2].SetActive(false);
+            }
+            else if (maderas.Count >= 25)
+            {
+                shipStructureLevel[0].SetActive(false);
+                shipStructureLevel[1].SetActive(false);
+                shipStructureLevel[2].SetActive(true);
+            }
         }
-        else if (maderas.Count >= 11 && maderas.Count <= 24)
-        {
-            shipStructureLevel[0].SetActive(false);
-            shipStructureLevel[1].SetActive(true);
-            shipStructureLevel[2].SetActive(false);
-        }
-        else if (maderas.Count >= 25)
-        {
-            shipStructureLevel[0].SetActive(false);
-            shipStructureLevel[1].SetActive(false);
-            shipStructureLevel[2].SetActive(true);
-        }
+        
     }
     private void Start()
     {
@@ -73,11 +86,12 @@ public class ShipConstruction : MonoBehaviour
     private void Update()
     {
         //  probando desde el inspector con una maderita zz 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    // Agrega un valor arbitrario cada vez que se presiona la tecla espaciadora
-        //    AddMadera(1);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Agrega un valor arbitrario cada vez que se presiona la tecla espaciadora
+            AddMadera(1);
+        }
+        Debug.Log("dddddddddddddddddddddddddddddd" + maderas.Count);
     }
 }
 

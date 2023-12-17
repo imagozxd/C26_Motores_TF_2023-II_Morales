@@ -8966,7 +8966,6 @@ GameObject:
   - component: {fileID: 250442971}
   - component: {fileID: 250442970}
   - component: {fileID: 250442974}
-  - component: {fileID: 250442975}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9074,22 +9073,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contadorMadera: {fileID: 148491293}
   jugador: {fileID: 619503462}
+  barcos: {fileID: 1956449606}
+  inventario: {fileID: 0}
+  shipConstruction: {fileID: 0}
+  playerController: {fileID: 0}
   _buttonEntregar: {fileID: 1410667139}
---- !u!114 &250442975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250442969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331168014699b1146b42ae44a92795ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valorMadera: 1
-  deck: {fileID: 0}
-  shipStructureLevel: []
 --- !u!4 &254712387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 217352449104118837, guid: d82d741d08bf20a4ea5640074f4cb97e,
@@ -15972,7 +15960,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 057cf758860808e45a6cd959642ed385,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -96.3
+      value: 56.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 057cf758860808e45a6cd959642ed385,
         type: 3}
@@ -15982,7 +15970,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 057cf758860808e45a6cd959642ed385,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.4
+      value: -75.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 057cf758860808e45a6cd959642ed385,
         type: 3}
@@ -18936,7 +18924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &538693774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20625,6 +20613,7 @@ MonoBehaviour:
   damage: 0
   vidaMaxima: 100
   vidaActual: 0
+  hacha: {fileID: 733468955}
 --- !u!136 &619503467
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20642,7 +20631,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 4.687547
   m_Height: 2.720432
@@ -38393,7 +38382,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1410667140}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 250442974}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: BotonEntregar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1410667140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53850,7 +53851,7 @@ MonoBehaviour:
     m_Bits: 32
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -58661,7 +58662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331168014699b1146b42ae44a92795ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valorMadera: 1
+  prefabMadera: {fileID: 7529651093611718220, guid: 85c706b310c5e1241b4c7b6be1754aea,
+    type: 3}
   deck: {fileID: 0}
   shipStructureLevel:
   - {fileID: 425197299}
@@ -67830,7 +67832,7 @@ PrefabInstance:
     - target: {fileID: 4352859511443470348, guid: 09327e1cbfab0b441983222cbe6390ea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

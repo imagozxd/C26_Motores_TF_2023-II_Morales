@@ -7,16 +7,19 @@ public class CanvasController : MonoBehaviour
 {
     public Text contadorMadera;
     public GameObject jugador;
-    Inventario inventario;
-    ShipConstruction shipConstruction;
-    PlayerController playerController;
+    public GameObject barcos;
+    public Inventario inventario;
+    public ShipConstruction shipConstruction;
+    public PlayerController playerController;
 
     public Button _buttonEntregar;
+
+    
 
     private void Start()
     {
         inventario = jugador.GetComponent<Inventario>();
-        shipConstruction = GetComponent<ShipConstruction>();
+        shipConstruction = barcos.GetComponent<ShipConstruction>();
         playerController= jugador.GetComponent<PlayerController>();
 
         _buttonEntregar.onClick.AddListener(() => BotonEntregar());
@@ -64,7 +67,7 @@ public class CanvasController : MonoBehaviour
     }
 
     
-    void BotonEntregar()
+    public void BotonEntregar()
     {
         //if (jugador != null && jugador.TryGetComponent<ShipConstruction>(out shipConstruction))
         //{
@@ -77,6 +80,9 @@ public class CanvasController : MonoBehaviour
         //}
         Debug.Log("DESDE EL BOTON  " + inventario.cantidadMadera);
         shipConstruction.AddMadera(inventario.cantidadMadera);
+        shipConstruction.ModificarEstructuraBarco();
+        inventario.cantidadMadera = 0;
+        
     }
 
 }

@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
             
             if (arbol != null)
             {
+                
                 Debug.Log("ASDSADASDA");
                 arbol.ActualizarVida(danioReal);
                Debug.Log("vida del arbol objetivo: " + arbol.vidaActualArbol);

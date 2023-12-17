@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     public float velocidadRotacion = 180f;
 
+
     private float rotacionY;
 
     public int damage;
@@ -19,9 +20,14 @@ public class PlayerController : MonoBehaviour
     //detectar el barco
     private bool dentroDelBarco = false;
 
+    public GameObject hacha;
+    private Animator hachaAnim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        hachaAnim = hacha.GetComponent<Animator>();
+        
         vidaActual = vidaMaxima;
 
     }
@@ -64,6 +70,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Tecla el boton del mouse ");
             // aqui la logica para lanzar la animacion
+
+            hachaAnim.SetTrigger("talar");
         }
     }
 
