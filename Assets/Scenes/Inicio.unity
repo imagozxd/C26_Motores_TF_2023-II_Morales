@@ -845,6 +845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonJugar: {fileID: 1867991235}
   _buttonSalir: {fileID: 1490935999}
+  delayCanvas: 4
+  canvas: {fileID: 1261719727}
 --- !u!4 &492621923
 Transform:
   m_ObjectHideFlags: 0
@@ -1900,8 +1902,8 @@ Canvas:
   m_GameObject: {fileID: 1261719727}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 1844635703}
+  m_RenderMode: 0
+  m_Camera: {fileID: 1108635236}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2456,7 +2458,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1844635704}
   - component: {fileID: 1844635703}
-  - component: {fileID: 1844635702}
   - component: {fileID: 1844635701}
   m_Layer: 0
   m_Name: Canvas Cam
@@ -2509,14 +2510,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1844635702
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844635700}
-  m_Enabled: 1
 --- !u!20 &1844635703
 Camera:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class Shark : MonoBehaviour
         if(other.gameObject.CompareTag("NodeShark"))
         {
             grafoPosicion++;  
-            if (grafoPosicion >3)
+            if (grafoPosicion >9)
             {
                 grafoPosicion = 0;
             }

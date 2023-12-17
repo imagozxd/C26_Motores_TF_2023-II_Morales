@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float duracionDia = 20f; // modificar a 210
+
+    private float tiempoActual = 0f;
+
+    public delegate void NuevoDiaEventHandler();
+    public static event NuevoDiaEventHandler OnNuevoDia;
+
+    private void Update()
     {
-        
+        tiempoActual += Time.deltaTime;
+
+        if(tiempoActual >= duracionDia)
+        {
+            tiempoActual = 0f;
+
+            DispararEventoNuevoDia();
+        }
+        Debug.Log(tiempoActual);
     }
 
-    // Update is called once per frame
-    void Update()
+    void DispararEventoNuevoDia()
     {
-        
+        if (OnNuevoDia != null)
+        {
+            OnNuevoDia();
+        }
     }
 }
