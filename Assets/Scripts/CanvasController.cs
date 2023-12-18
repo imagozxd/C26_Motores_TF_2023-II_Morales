@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CanvasController : MonoBehaviour
     public PlayerController playerController;
 
     public Button _buttonEntregar;
+    public Button _buttonGanar;
 
     
 
@@ -23,9 +25,11 @@ public class CanvasController : MonoBehaviour
         playerController= jugador.GetComponent<PlayerController>();
 
         _buttonEntregar.onClick.AddListener(() => BotonEntregar());
+        _buttonGanar.onClick.AddListener(() => BotonGanar());
 
         //mostrar el boton en pantalla
         _buttonEntregar.gameObject.SetActive(false);
+        _buttonGanar.gameObject.SetActive(false);
 
     }
 
@@ -64,6 +68,12 @@ public class CanvasController : MonoBehaviour
         {
             _buttonEntregar.gameObject.SetActive(false);
         }
+
+        //verificar si puede ganar
+        if(shipConstruction.gano)
+        {
+            _buttonGanar.gameObject.SetActive(true);
+        }
     }
 
     
@@ -83,6 +93,10 @@ public class CanvasController : MonoBehaviour
         shipConstruction.ModificarEstructuraBarco();
         inventario.cantidadMadera = 0;
         
+    }
+    public void BotonGanar()
+    {
+        SceneManager.LoadScene("Final");
     }
 
 }

@@ -126,6 +126,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8458253678847467901, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6623007054891565126, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6567864205427795205, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017024882570064705, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4151469712372254748, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3234474415169330423, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2924667346190422439, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2679766712895694909, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -291849380835635200, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82e7e144195506e409e7779674367ae2,
         type: 3}
       propertyPath: m_Name
@@ -135,6 +180,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: arbol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298524286785925232, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2772351748365453739, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249290345876618508, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880741409817808998, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115642499867339775, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765481959548482619, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174103183826656155, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487694812811765117, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538607069502623119, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655399245451061770, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8592465796407971733, guid: 82e7e144195506e409e7779674367ae2,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

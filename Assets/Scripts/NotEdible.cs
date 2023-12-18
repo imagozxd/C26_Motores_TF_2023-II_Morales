@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,6 +10,7 @@ public class NotEdible : Resources
     //public string requiredTool; // Herramienta necesaria para recolectar el recurso
     public GameObject treePrefab; // spawn de arboles
     public GameObject choppedTreePrefab; // prefab de arbol talado
+    public int limiteArbolesGlobal;
     //public int hpTree;
     //public int currentHpTree; // deberia ser privado                     YA NO DEBERIAN ESTAR ACA, NOS VAMOS A UN SCRIPT SOLITO 
 
@@ -20,6 +22,8 @@ public class NotEdible : Resources
 
     public int initialTreeCount; // cantidad inicial, PROBAR    
 
+
+
     private void Start()
     {
         //establecer la vida maxima de los arboles
@@ -29,13 +33,21 @@ public class NotEdible : Resources
     }
     private void Update()
     {
-        //
-        //
-        //
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SpawnInitialTrees();
+        //    Debug.Log("la cantidad de arboles existente: " + GetspawnedTreeCount());
+        //}
     }
     
     void SpawnInitialTrees()
     {
+        Debug.Log("llamo al evento spawn");
+        if(GetspawnedTreeCount () >= limiteArbolesGlobal)
+        {
+            Debug.Log("full de arboles");
+            return;
+        }
         for (int i = 0; i < initialTreeCount; i++)
         {
             SpawnTree();
@@ -97,7 +109,7 @@ public class NotEdible : Resources
         Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
     }
 
-    public int GetspawnedTreeCount()
+    public int GetspawnedTreeCount() // clavee
     {
         return spawnedTrees.Count; 
     }
@@ -110,4 +122,17 @@ public class NotEdible : Resources
             Debug.Log("colision desde arbol hacia player");
         }
     }
+
+
+    //suscripcion
+    private void OnEnable()
+    {
+        TimeController.OnNuevoDia += SpawnInitialTrees;
+    }
+    private void OnDisable()
+    {
+        // Anular la suscripción al evento cuando el objeto se deshabilita o destruye
+        TimeController.OnNuevoDia -= SpawnInitialTrees;
+    }
+    
 }

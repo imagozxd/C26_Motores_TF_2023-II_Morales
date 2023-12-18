@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public GameObject hacha;
     private Animator hachaAnim;
 
+    //temas de audio xd
+    public AudioSource playerAudio;    
+    public AudioClip audioCaminar;
+    private bool enMovimiento = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,6 +53,16 @@ public class PlayerController : MonoBehaviour
         float directionMovement = context.ReadValue<float>() * velocidad;
         velocity = new Vector3(0, 0, directionMovement);
         //Debug.Log("valor :" + context.ReadValue<float>());
+        if (directionMovement != 0f)
+        {
+            enMovimiento = true;
+            playerAudio.Play();
+        }
+        else
+        {
+            playerAudio.Stop();
+        }
+
     }
 
     public void Direction(InputAction.CallbackContext context)
@@ -134,5 +149,9 @@ public class PlayerController : MonoBehaviour
             dentroDelBarco = false; 
         }
     }
+     
+
+   
+
 }
 
