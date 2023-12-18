@@ -6,19 +6,17 @@ using UnityEngine.Rendering;
 
 public class NotEdible : Resources
 {
-    // detalles de cosas NO COMESTIBLES
-    //public string requiredTool; // Herramienta necesaria para recolectar el recurso
     public GameObject treePrefab; // spawn de arboles
     public GameObject choppedTreePrefab; // prefab de arbol talado
     public int limiteArbolesGlobal;
-    //public int hpTree;
+    
     //public int currentHpTree; // deberia ser privado                     YA NO DEBERIAN ESTAR ACA, NOS VAMOS A UN SCRIPT SOLITO 
 
     public Vector3 treeSpawn = new Vector3 (0, 0, 0);  //declara el punto central de la zona spawn 
     public float radiusSpawn = 0;
 
-    // una lista para almacenar la cantidad de ref de arboles instanciados
-    private List<GameObject> spawnedTrees = new List<GameObject>();
+    private MiListaEnlazada<GameObject> spawnedTrees = new MiListaEnlazada<GameObject>();
+
 
     public int initialTreeCount; // cantidad inicial, PROBAR    
 
@@ -26,24 +24,17 @@ public class NotEdible : Resources
 
     private void Start()
     {
-        //establecer la vida maxima de los arboles
-        //currentHpTree = hpTree;
-
         SpawnInitialTrees();
     }
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    SpawnInitialTrees();
-        //    Debug.Log("la cantidad de arboles existente: " + GetspawnedTreeCount());
-        //}
+
     }
-    
+
     void SpawnInitialTrees()
     {
         Debug.Log("llamo al evento spawn");
-        if(GetspawnedTreeCount () >= limiteArbolesGlobal)
+        if (GetSpawnedTreeCount() >= limiteArbolesGlobal)
         {
             Debug.Log("full de arboles");
             return;
@@ -53,20 +44,17 @@ public class NotEdible : Resources
             SpawnTree();
         }
     }
+
     void SpawnTree()
     {
         Vector3 randomPosition = GetRandomPosition();
         if (!HasCollision(randomPosition))
         {
-            GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90))); // euler porque sino sale acostado
-            spawnedTrees.Add(newTree); // se agrega a la lista
-            //Debug.Log("pos del arbol spameado: " + randomPosition);
+            GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90)));
+            spawnedTrees.Agregar(newTree); // Cambio el método Add a Agregar
 
-            newTree.transform.SetParent(this.transform); // para hacerlos hijos
-
+            newTree.transform.SetParent(this.transform);
         }
-        //Debug.Log("cantidad de " + resourceName + " :" + GetspawnedTreeCount());
-
     }
 
     Vector3 GetRandomPosition()
@@ -109,18 +97,15 @@ public class NotEdible : Resources
         Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
     }
 
-    public int GetspawnedTreeCount() // clavee
+    public MiListaEnlazada<GameObject> GetSpawnedTrees()
     {
-        return spawnedTrees.Count; 
+        return spawnedTrees;
     }
-    private void OnCollisionEnter(Collision collision)
+
+    // Cambio el nombre del método y el tipo de retorno
+    public int GetSpawnedTreeCount()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerController playerDamage = GetComponent<PlayerController>();
-            Debug.Log("esto es playerDamage:"+ playerDamage);
-            Debug.Log("colision desde arbol hacia player");
-        }
+        return spawnedTrees.ContarElementos();
     }
 
 

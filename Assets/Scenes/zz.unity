@@ -15910,7 +15910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9265591d3c64a67439dee952cda435a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadMadera: 30
+  cantidadMadera: 0
 --- !u!82 &619503474
 AudioSource:
   m_ObjectHideFlags: 0

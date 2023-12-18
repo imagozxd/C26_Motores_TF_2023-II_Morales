@@ -6,8 +6,8 @@ public class MiStack
 {
     private class Nodo
     {
-        public GameObject valor; // El GameObject almacenado en el nodo
-        public Nodo siguiente; // El siguiente nodo en la pila
+        public GameObject valor; 
+        public Nodo siguiente; 
 
         public Nodo(GameObject val)
         {
@@ -16,15 +16,14 @@ public class MiStack
         }
     }
 
-    private Nodo cabeza; // El nodo en la parte superior de la pila
+    private Nodo cabeza; 
 
-    // Método para verificar si la pila está vacía
     public bool EstaVacia()
     {
         return cabeza == null;
     }
 
-    // Método para agregar un elemento a la pila
+    //pa agregar
     public void Push(GameObject val)
     {
         Nodo nuevoNodo = new Nodo(val);
@@ -39,7 +38,7 @@ public class MiStack
         }
     }
 
-    // Método para quitar y devolver el elemento superior de la pila
+    // pa quitar
     public GameObject Pop()
     {
         if (EstaVacia())
@@ -52,7 +51,7 @@ public class MiStack
         return valorSacado;
     }
 
-    // Método para ver el elemento superior de la pila sin sacarlo
+    // conocer el ultimo, me puede servir
     public GameObject Peek()
     {
         if (EstaVacia())
@@ -63,7 +62,7 @@ public class MiStack
         return cabeza.valor;
     }
 
-    // Método para obtener la cantidad de elementos en la pila
+    // cantidad
     public int Count()
     {
         int contador = 0;
