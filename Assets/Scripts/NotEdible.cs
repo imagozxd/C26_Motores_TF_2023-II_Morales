@@ -10,7 +10,6 @@ public class NotEdible : Resources
     public GameObject choppedTreePrefab; // prefab de arbol talado
     public int limiteArbolesGlobal;
     
-    //public int currentHpTree; // deberia ser privado                     YA NO DEBERIAN ESTAR ACA, NOS VAMOS A UN SCRIPT SOLITO 
 
     public Vector3 treeSpawn = new Vector3 (0, 0, 0);  //declara el punto central de la zona spawn 
     public float radiusSpawn = 0;
@@ -25,6 +24,9 @@ public class NotEdible : Resources
     private void Start()
     {
         SpawnInitialTrees();
+
+        TimeController.OnNuevoDia += SpawnInitialTrees;
+        
     }
     private void Update()
     {
@@ -89,13 +91,13 @@ public class NotEdible : Resources
         
     }
         
-    // Método para interactuar con el recurso no comestible
-    public override void Interact()
-    {
-        base.Interact();
+    //// Método para interactuar con el recurso no comestible
+    //public override void Interact()
+    //{
+    //    base.Interact();
                 
-        Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
-    }
+    //    Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
+    //}
 
     public MiListaEnlazada<GameObject> GetSpawnedTrees()
     {
@@ -109,15 +111,16 @@ public class NotEdible : Resources
     }
 
 
-    //suscripcion
-    private void OnEnable()
-    {
-        TimeController.OnNuevoDia += SpawnInitialTrees;
-    }
-    private void OnDisable()
-    {
-        // Anular la suscripción al evento cuando el objeto se deshabilita o destruye
-        TimeController.OnNuevoDia -= SpawnInitialTrees;
-    }
+    ////suscripcion
+    //private void OnEnable()
+    //{
+    //    TimeController.OnNuevoDia += SpawnInitialTrees;
+    //    Debug.Log("ON ENABLE evento que spanea arboles cada nuevo dia");
+    //}
+    //private void OnDisable()
+    //{
+    //    // Anular la suscripción al evento cuando el objeto se deshabilita o destruye
+    //    TimeController.OnNuevoDia -= SpawnInitialTrees;
+    //}
     
 }

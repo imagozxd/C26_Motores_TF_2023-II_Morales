@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     //temas de audio xd
     public AudioSource playerAudio;    
     public AudioClip audioCaminar;
-    private bool enMovimiento = false;
+    //private bool enMovimiento = false;
 
     void Start()
     {
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("valor :" + context.ReadValue<float>());
         if (directionMovement != 0f)
         {
-            enMovimiento = true;
+            //enMovimiento = true;
             playerAudio.Play();
         }
         else

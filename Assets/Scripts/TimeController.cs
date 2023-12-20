@@ -32,7 +32,7 @@ public class TimeController : MonoBehaviour
             diasTranscurridos++;
 
             // Actualizar el ScoreSO
-            scoreSO.dias = diasTranscurridos;
+            //scoreSO.dias = diasTranscurridos;
             scoreSO.ActualizarUltimaVezJugado();
 
             // Guardar el nuevo intento en la tabla

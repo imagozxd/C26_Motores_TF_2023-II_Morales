@@ -4,8 +4,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Shark : MonoBehaviour
-{
-    
+{    
     private Vector3 refVelocity;
     public float timeToMove;
 
@@ -13,11 +12,14 @@ public class Shark : MonoBehaviour
     public float speed;
 
     public int grafoPosicion = 0;
+        
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, posDestiny, Time.deltaTime * speed);        
+        transform.position = Vector3.MoveTowards(transform.position, posDestiny, Time.deltaTime * speed);
 
+
+        //Debug.Log("CANTIDAD DE NODOS DE TIBURONES: " + nodeControl.arrayNodeControl.Length);
     }
     
     public void OnTriggerEnter(Collider other)

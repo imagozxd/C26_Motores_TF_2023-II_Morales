@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class ShipConstruction : MonoBehaviour
 {
-    public GameObject prefabMadera;
-    public Transform deck;
+    public GameObject prefabMadera;    
 
     public GameObject[] shipStructureLevel;
 
@@ -25,10 +24,12 @@ public class ShipConstruction : MonoBehaviour
         ModificarEstructuraBarco(); // Actualizar la estructura del barco después de agregar madera
     }
 
-    public void RemoveMadera()
+    public void RemoveMadera() // me esta quitando de 1 en 1
     {
         if (maderas.Count() > 0)
         {
+            //maderasPerdidas = Random.Range(1, 5);
+
             maderas.Pop();
             ModificarEstructuraBarco(); // Actualizar la estructura del barco después de remover madera
             //Debug.Log("Cantidad de madera en la pila después de remover: " + maderas.Count);
@@ -65,6 +66,24 @@ public class ShipConstruction : MonoBehaviour
         }
     }
 
+    //para el evento que retira maderas
+    public void MaderasPerdidasPorDia()
+    {if (maderas.Count() >5)
+        {
+            int valorRandom = Random.Range(1, 5);
+            for (int i = 1; i < valorRandom; i++)
+            {
+                RemoveMadera();
+                Debug.Log("SE ESTA PERDIENDO MADERAS LOCO");
+            }
+        }
+    else
+        {
+            Debug.Log("OSEASEEEEE QUE NO HABIA MADERAS SUFICIENTES");
+            return;
+        }
+    }
+
     private void Start()
     {
         // Apagar todos los modelos al inicio
@@ -72,8 +91,10 @@ public class ShipConstruction : MonoBehaviour
         {
             shipStructureLevel[i].SetActive(false);
         }
+
+        TimeController.OnNuevoDia += MaderasPerdidasPorDia;
     }
-    // Resto del código de Update y otras funciones si es necesario...
+    
 
 private void Update()
     {
@@ -89,8 +110,8 @@ private void Update()
             // Si shipStructureLevel[2] está activo, aumentar el temporizador
             tiempoActivo += Time.deltaTime;
 
-            // Si ha estado activo durante al menos 20 segundos, imprimir "gano"
-            if (tiempoActivo >= 20f && !gano)
+            // Si ha estado activo durante al menos 15 segundos, imprimir "gano"
+            if (tiempoActivo >= 15f && !gano)
             {
                 Debug.Log("¡Ganaste!");
                 gano = true; // Evitar que se imprima múltiples veces
@@ -102,6 +123,13 @@ private void Update()
             tiempoActivo = 0f;
             gano = false;
         }
+
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    // Si se presiona la tecla "C", remover una madera
+        //    RemoveMadera();
+        //    Debug.Log("LA CANTIDAD DE MADERAS DEL BARCO" + maderas.Count());
+        //}
     }
 }
 
