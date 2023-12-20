@@ -3,15 +3,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewScoreSO", menuName = "ScoreSO")]
 public class ScoreSO : ScriptableObject
 {
-    public int dias;   
+    public int dias;
 
-    // Variable para almacenar la fecha y hora de la última vez que se jugó
-    public System.DateTime ultimaVezJugado;
+    //public int Dias
+    //{
+    //    get { return dias; }
+    //}
 
-    // Método para actualizar la fecha y hora actual cuando se actualiza el puntaje
-    public void ActualizarUltimaVezJugado()
+    // Método para actualizar la cantidad de días
+    public void ActualizarDias(int nuevosDias)
     {
-        ultimaVezJugado = System.DateTime.Now;
+        dias = nuevosDias;
     }
-
 }

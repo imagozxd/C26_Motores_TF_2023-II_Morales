@@ -2888,7 +2888,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b5c24d60f6237c543a080f3ab87ef18b, type: 3}
-    m_FontSize: 97
+    m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -4038,6 +4038,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonSalir: {fileID: 942637370}
+  scoreSO: {fileID: 11400000, guid: 1be839e4210bcbb4b928ab66fbd61902, type: 2}
+  textoDias: {fileID: 1278528343}
 --- !u!4 &1948309198
 Transform:
   m_ObjectHideFlags: 0

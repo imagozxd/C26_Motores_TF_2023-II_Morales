@@ -7324,9 +7324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb84b809108917042a9cae86b21409b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToMove: 3
   posDestiny: {x: 0, y: 0, z: 0}
-  speed: 55
+  speed: 15
   grafoPosicion: 0
 --- !u!65 &419032377
 BoxCollider:
@@ -15962,7 +15961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 12
   velocidadRotacion: 180
-  damage: 0
   vidaMaxima: 100
   vidaActual: 0
   hacha: {fileID: 733468955}

@@ -53,7 +53,7 @@ public class NotEdible : Resources
         if (!HasCollision(randomPosition))
         {
             GameObject newTree = Instantiate(treePrefab, randomPosition, Quaternion.Euler(-90, 0, Random.Range(-90, 90)));
-            spawnedTrees.Agregar(newTree); // Cambio el método Add a Agregar
+            spawnedTrees.Agregar(newTree); 
 
             newTree.transform.SetParent(this.transform);
         }
@@ -91,12 +91,6 @@ public class NotEdible : Resources
         
     }    
 
-    //public MiListaEnlazada<GameObject> GetSpawnedTrees()
-    //{
-    //    return spawnedTrees;
-    //}
-
-    // Cambio el nombre del método y el tipo de retorno
     public int GetSpawnedTreeCount()
     {
         return spawnedTrees.ContarElementos();
