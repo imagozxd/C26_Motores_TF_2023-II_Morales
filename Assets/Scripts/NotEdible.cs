@@ -89,20 +89,12 @@ public class NotEdible : Resources
         Debug.Log("no hay arbol, crea uno");
         return false;
         
-    }
-        
-    //// Método para interactuar con el recurso no comestible
-    //public override void Interact()
-    //{
-    //    base.Interact();
-                
-    //    Instantiate(treePrefab, position, Quaternion.Euler(-90,0,0));
-    //}
+    }    
 
-    public MiListaEnlazada<GameObject> GetSpawnedTrees()
-    {
-        return spawnedTrees;
-    }
+    //public MiListaEnlazada<GameObject> GetSpawnedTrees()
+    //{
+    //    return spawnedTrees;
+    //}
 
     // Cambio el nombre del método y el tipo de retorno
     public int GetSpawnedTreeCount()
@@ -110,17 +102,4 @@ public class NotEdible : Resources
         return spawnedTrees.ContarElementos();
     }
 
-
-    ////suscripcion
-    //private void OnEnable()
-    //{
-    //    TimeController.OnNuevoDia += SpawnInitialTrees;
-    //    Debug.Log("ON ENABLE evento que spanea arboles cada nuevo dia");
-    //}
-    //private void OnDisable()
-    //{
-    //    // Anular la suscripción al evento cuando el objeto se deshabilita o destruye
-    //    TimeController.OnNuevoDia -= SpawnInitialTrees;
-    //}
-    
 }

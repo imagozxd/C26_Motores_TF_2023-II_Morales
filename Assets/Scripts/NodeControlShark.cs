@@ -18,8 +18,5 @@ public class NodeControlShark : MonoBehaviour
         tiburon.SetPositionDestiny(arrayNodeControl[tiburon.grafoPosicion].transform.position);
         tiburon.LookAt();
     }
-    void OnTriggerEnter(Collider other)
-    {
-        
-    }
+    
 }
