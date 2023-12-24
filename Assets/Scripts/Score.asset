@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b58599947c838c4b85b1339c38c3ed0, type: 3}
   m_Name: Score
   m_EditorClassIdentifier: 
-  dias: 0
+  dias: 3
